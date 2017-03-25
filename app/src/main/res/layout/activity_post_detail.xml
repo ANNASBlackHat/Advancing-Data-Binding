@@ -1,44 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/thumbnail"
-        android:src="@drawable/google_building"
-        android:scaleType="centerCrop"
+    <LinearLayout
+        android:orientation="vertical"
+        android:paddingBottom="16dp"
         android:layout_width="match_parent"
-        android:layout_height="200dp" />
-    <TextView
-        android:id="@+id/title"
-        android:text="@string/title"
-        android:layout_below="@+id/thumbnail"
-        android:textSize="18sp"
-        android:paddingLeft="16dp"
-        android:layout_marginTop="9dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:id="@+id/admin"
-        android:text="@string/admin"
-        android:paddingLeft="16dp"
-        android:textSize="12sp"
-        android:layout_below="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:id="@+id/date"
-        android:layout_toRightOf="@id/admin"
-        android:layout_below="@+id/title"
-        android:text="@string/tgl"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:id="@+id/content"
-        android:text="@string/content"
-        android:layout_below="@+id/admin"
-        android:padding="16dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-</RelativeLayout>
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/thumbnail"
+            android:src="@drawable/google_building"
+            android:scaleType="centerCrop"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+        <TextView
+            android:id="@+id/date"
+            android:paddingLeft="16dp"
+            android:textSize="11sp"
+            android:layout_marginTop="9dp"
+            android:text="@string/tgl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/title"
+            android:text="@string/title"
+            android:textSize="18sp"
+            android:paddingLeft="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/admin"
+            android:text="@string/admin"
+            android:paddingLeft="16dp"
+            android:textSize="12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/content"
+            android:text="@string/content"
+            android:padding="16dp"
+            android:textSize="16sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/img_like"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_favorite_border_red_500_24dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp" />
+        <TextView
+            android:text="1,235 likes "
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</ScrollView>

@@ -7,29 +7,16 @@ import java.io.Serializable;
  */
 
 public class Post implements Serializable{
+
     private String img;
     private String title;
     private String admin;
     private String tgl;
     private String content;
     private String category;
+    private int likeCount;
+    private boolean isLiked;
     private boolean isReaded;
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public boolean isReaded() {
-        return isReaded;
-    }
-
-    public void setReaded(boolean readed) {
-        isReaded = readed;
-    }
 
     public String getImg() {
         return img;
@@ -69,5 +56,37 @@ public class Post implements Serializable{
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public int getLikeCount() {
+        return likeCount;
+    }
+
+    public void setLikeCount(int likeCount) {
+        this.likeCount = likeCount;
+    }
+
+    public boolean isLiked() {
+        return isLiked;
+    }
+
+    public void setLiked(boolean liked) {
+        isLiked = liked;
+    }
+
+    public boolean isReaded() {
+        return isReaded;
+    }
+
+    public void setReaded(boolean readed) {
+        isReaded = readed;
     }
 }
