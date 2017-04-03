@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="post"
+            type="com.annasblackhat.advancingdatabinding.model.Post"/>
+    </data>
     <android.support.v7.widget.CardView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/card_view"
         app:cardUseCompatPadding="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <ImageView
-                android:src="@drawable/google_building"
+                android:src="@{post.img}"
+                tools:src="@drawable/google_building"
                 android:scaleType="centerCrop"
                 android:layout_width="match_parent"
                 android:layout_height="170dp" />
             <TextView
+                android:text="@{post.title}"
                 tools:text="@string/title"
                 android:textSize="16sp"
                 android:paddingLeft="16dp"
@@ -26,7 +32,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <TextView
-                android:text="@string/content"
+                android:text="@{post.content}"
+                tools:text="@string/content"
                 android:maxLines="2"
                 android:textSize="12sp"
                 android:paddingLeft="16dp"
@@ -35,5 +42,5 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>
-
     </android.support.v7.widget.CardView>
+</layout>

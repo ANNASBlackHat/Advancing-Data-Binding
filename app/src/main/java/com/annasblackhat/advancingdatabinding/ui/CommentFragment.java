@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.annasblackhat.advancingdatabinding.R;
+import com.annasblackhat.advancingdatabinding.databinding.FragmentCommentBinding;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,8 +23,8 @@ public class CommentFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_comment, container, false);
-        return v;
+        FragmentCommentBinding binding = FragmentCommentBinding.inflate(inflater, container, false);
+        return binding.getRoot();
     }
 
 }

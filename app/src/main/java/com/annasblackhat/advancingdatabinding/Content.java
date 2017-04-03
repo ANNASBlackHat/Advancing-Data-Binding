@@ -58,6 +58,7 @@ public class Content {
         post.setAdmin("Berry Allen");
         post.setTgl("Monday, 12 March 2017");
         post.setContent("YouTube has used speech-to-text software to automatically caption speech in videos since 2009 (they are used 15 million times a day). Today it rolled out algorithms that indicate applause, laughter, and music in captions. More sounds could follow, since the underlying software can also identify noises like sighs, barks, and knocks. \n The company says user tests indicate that the feature significantly improves the experience of the deaf and hard of hearing (and anyone who needs to keep the volume down). “Machine learning is giving people like me that need accommodation in some situations the same independence as others,” says Liat Kaver, a product manager at YouTube who is deaf.");
+        post.setLikeCount(2389);
         postList.add(post);
 
         post = new Post();
@@ -66,6 +67,7 @@ public class Content {
         post.setAdmin("Sarah Lance");
         post.setTgl("Friday, 22 June 2017");
         post.setContent("The Deep Learning field has dramatically expanded in the last few years, to the point where it’s not realistic to grok all the subfields of Deep Learning in a short amount of time. I recommend diving deep into one particular subfield, and then it becomes easier to learn the other subfields once you’ve mastered one area. These fields do not have that much in common anymore, besides the fact that they all utilize the expressive power of deep learning to learn tasks end-to-end, and are of a generally experimental flavor (rather than theoretical Computer Science).");
+        post.setLikeCount(1532900);
         postList.add(post);
 
         return postList;

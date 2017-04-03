@@ -1,12 +1,17 @@
 package com.annasblackhat.advancingdatabinding.model;
 
+import android.databinding.BaseObservable;
+import android.databinding.Bindable;
+
+import com.annasblackhat.advancingdatabinding.BR;
+
 import java.io.Serializable;
 
 /**
  * Created by annasblackhat on 24/03/17.
  */
 
-public class Post implements Serializable{
+public class Post extends BaseObservable implements Serializable{
 
     private String img;
     private String title;
@@ -66,20 +71,24 @@ public class Post implements Serializable{
         this.category = category;
     }
 
+    @Bindable
     public int getLikeCount() {
         return likeCount;
     }
 
     public void setLikeCount(int likeCount) {
         this.likeCount = likeCount;
+        notifyPropertyChanged(BR.likeCount);
     }
 
+    @Bindable
     public boolean isLiked() {
         return isLiked;
     }
 
     public void setLiked(boolean liked) {
         isLiked = liked;
+        notifyPropertyChanged(BR.liked);
     }
 
     public boolean isReaded() {

@@ -1,12 +1,15 @@
 package com.annasblackhat.advancingdatabinding.adapter;
 
+import android.content.Intent;
+import android.databinding.DataBindingUtil;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.annasblackhat.advancingdatabinding.R;
+import com.annasblackhat.advancingdatabinding.databinding.ListItemPostBinding;
 import com.annasblackhat.advancingdatabinding.model.Post;
+import com.annasblackhat.advancingdatabinding.ui.PostDetailActivity;
 
 import java.util.List;
 
@@ -24,12 +27,14 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolderPost
 
     @Override
     public ViewHolderPost onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new ViewHolderPost(LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_post, parent, false));
+        ListItemPostBinding binding = ListItemPostBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
+        return new ViewHolderPost(binding.getRoot());
     }
 
     @Override
     public void onBindViewHolder(ViewHolderPost holder, int position) {
-
+        holder.postBinding.setPost(postList.get(position));
+        holder.postBinding.executePendingBindings();
     }
 
     @Override
@@ -39,8 +44,22 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolderPost
 
     class ViewHolderPost extends RecyclerView.ViewHolder{
 
-        public ViewHolderPost(View itemView) {
+        //ViewDataBinding binding;
+        ListItemPostBinding postBinding;
+
+        public ViewHolderPost(final View itemView) {
             super(itemView);
+            //binding = DataBindingUtil.bind(itemView);
+            postBinding = DataBindingUtil.bind(itemView);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(itemView.getContext(), PostDetailActivity.class);
+                    intent.putExtra(Intent.EXTRA_TEXT, postList.get(getLayoutPosition()));
+                    itemView.getContext().startActivity(intent);
+                }
+            });
         }
     }
 }

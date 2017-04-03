@@ -5,6 +5,7 @@
     <string name="title">Google searching for new CEO</string>
     <string name="tgl">Wednesday 5 April 2018</string>
     <string name="anonymous">Anonymous</string>
+    <string name="number">%,d</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
